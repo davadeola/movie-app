@@ -16,7 +16,7 @@ export const GlobalProvider = ({ children }) => {
   async function getMovies() {
     try {
       const res = await axios.get(
-        "http://www.omdbapi.com/?s=all&apikey=7619d5ee"
+        "https://www.omdbapi.com/?s=all&apikey=7619d5ee"
       );
 
       dispatch({ type: "GET_MOVIES", payload: res.data.Search });
