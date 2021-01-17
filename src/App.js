@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { GlobalProvider } from "./context/GlobalState";
+
+import MovieResult from "./components/MovieResult";
+import SearchBar from "./components/SearchBar";
+import NominationModal from "./components/NominationModal";
+import { useState } from "react";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  const upModal = () => {
+    setShowModal(true);
+  };
+
+  const downModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <div className="App">
+        {showModal && <NominationModal downModal={downModal} />}
+        <div className="row">
+          <button onClick={upModal}>My Nominations</button>
+          <SearchBar />
+        </div>
+
+        <MovieResult />
+      </div>
+    </GlobalProvider>
   );
 }
 
