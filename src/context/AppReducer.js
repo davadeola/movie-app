@@ -37,6 +37,12 @@ export default (state, action) => {
         ],
       };
 
+    case "GET_LOCAL":
+      return {
+        ...state,
+        nomMovies: JSON.parse(localStorage.getItem("react-nominated-list")),
+      };
+
     default:
       return state;
   }

@@ -6,12 +6,27 @@ import MovieDisplay from "./MovieDisplay";
 import { GlobalContext } from "../context/GlobalState";
 
 function MovieResult() {
-  const { movies, getMovies, selectedMovie } = useContext(GlobalContext);
+  const {
+    movies,
+    getMovies,
+    selectedMovie,
+    getLocalNom,
+    nomMovies,
+  } = useContext(GlobalContext);
 
   useEffect(() => {
     getMovies();
+    getLocalNom();
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const saveToLocalStorage = (movies) => {
+    localStorage.setItem("react-nominated-list", JSON.stringify(movies));
+  };
+
+  useEffect(() => {
+    saveToLocalStorage(nomMovies);
+  }, [nomMovies]);
 
   return (
     <div>

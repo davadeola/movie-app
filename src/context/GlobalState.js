@@ -44,6 +44,10 @@ export const GlobalProvider = ({ children }) => {
     dispatch({ type: "UNDO_MOVIE", payload: id });
   }
 
+  function getLocalNom() {
+    dispatch({ type: "GET_LOCAL" });
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -55,6 +59,7 @@ export const GlobalProvider = ({ children }) => {
         nominateMovie,
         selectMovie,
         undoMovie,
+        getLocalNom,
       }}
     >
       {children}
