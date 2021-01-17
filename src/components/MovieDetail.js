@@ -6,13 +6,13 @@ function MovieDetail({ selectedMovie }) {
   const [isNominated, setIsNominated] = useState(false);
 
   useEffect(() => {
-    let val = nomMovies.some((movie) => selectedMovie.imdbID == movie.imdbID);
+    let val = nomMovies.some((movie) => selectedMovie.imdbID === movie.imdbID);
     setIsNominated(val);
   }, [selectedMovie, nomMovies]);
 
   return (
     <div>
-      {selectedMovie != undefined && selectedMovie.imdbID != "" ? (
+      {selectedMovie !== undefined && selectedMovie.imdbID !== "" ? (
         <div className=" movie-detail-container">
           <div className="col-60">
             <h2>{selectedMovie.Title}</h2>

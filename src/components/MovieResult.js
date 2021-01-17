@@ -30,11 +30,12 @@ function MovieResult() {
 
   return (
     <div>
-      {movies != undefined ? (
+      {movies !== undefined ? (
         <MovieDisplay movies={movies} />
       ) : (
         <img
           src={loader}
+          alt="loader"
           style={{
             display: "block",
             margin: "0 auto",

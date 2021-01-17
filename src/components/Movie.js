@@ -10,15 +10,16 @@ function Movie({ movieImg, imdbID, selected }) {
   };
 
   useEffect(() => {
-    let val = nomMovies.some((movie) => imdbID == movie.imdbID);
+    let val = nomMovies.some((movie) => imdbID === movie.imdbID);
     setIsNominated(val);
-  }, [nomMovies]);
+  }, [nomMovies, imdbID]);
 
   return (
     <div className={`movie-container ${selected && "movie-selected"}`}>
       <img
         className="movie-poster"
         src={movieImg}
+        alt="movieImg"
         onClick={() => {
           onSelectMovie(imdbID);
         }}

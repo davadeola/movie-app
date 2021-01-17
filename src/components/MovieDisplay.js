@@ -14,7 +14,7 @@ function MovieDisplay({ movies }) {
           key={movie.imdbID}
           imdbID={movie.imdbID}
           selected={
-            selectedMovie[0].imdbID == movie.imdbID && selectedMovie.length > 0
+            selectedMovie[0].imdbID === movie.imdbID && selectedMovie.length > 0
           }
         />
       ))}
