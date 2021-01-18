@@ -30,7 +30,7 @@ function MovieDetail({ selectedMovie }) {
               </button>
             )}
 
-            {isNominated && nomMovies.length < 5 && (
+            {isNominated && nomMovies.length <= 5 && (
               <button onClick={() => undoMovie(selectedMovie.imdbID)}>
                 Undo
               </button>
