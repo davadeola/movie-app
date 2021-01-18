@@ -40,7 +40,8 @@ const AppReducer = (state, action) => {
     case "GET_LOCAL":
       return {
         ...state,
-        nomMovies: JSON.parse(localStorage.getItem("react-nominated-list")),
+        nomMovies:
+          JSON.parse(localStorage.getItem("react-nominated-list")) || [],
       };
 
     default:
