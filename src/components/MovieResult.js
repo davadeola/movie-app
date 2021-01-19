@@ -29,7 +29,7 @@ function MovieResult() {
   }, [nomMovies]);
 
   return (
-    <div>
+    <>
       {movies !== undefined ? (
         <MovieDisplay movies={movies} />
       ) : (
@@ -43,7 +43,7 @@ function MovieResult() {
         />
       )}
       <MovieDetail selectedMovie={selectedMovie[0]} />
-    </div>
+    </>
   );
 }
 

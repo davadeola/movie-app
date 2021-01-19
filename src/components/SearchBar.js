@@ -17,9 +17,14 @@ function SearchBar() {
   };
 
   return (
-    <div className="row">
-      <input placeholder="Search for a movie by name" onChange={handleSearch} />
-      <img src={search} alt="Search icon" onClick={onSearch} />
+    <div className="col">
+      <div className="row search">
+        <input
+          placeholder="Search for a movie by name"
+          onChange={handleSearch}
+        />
+        <img src={search} alt="Search icon" onClick={onSearch} />
+      </div>
     </div>
   );
 }

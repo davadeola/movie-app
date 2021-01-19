@@ -23,7 +23,10 @@ function App() {
       <div className="App">
         {showModal && <NominationModal downModal={downModal} />}
         <div className="row">
-          <button onClick={upModal}>My Nominations</button>
+          <div className="col">
+            {" "}
+            <button onClick={upModal}>My Nominations</button>
+          </div>
           <SearchBar />
         </div>
 
