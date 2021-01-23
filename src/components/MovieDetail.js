@@ -21,16 +21,17 @@ function MovieDetail({ selectedMovie }) {
             </div>
           </div>
           <div className="col col-40">
-            {isNominated && nomMovies.length <= 5 && (
-              <button onClick={() => undoMovie(selectedMovie.imdbID)}>
-                Undo
-              </button>
-            )}
             {nomMovies.length >= 5 ? (
               <h4>Your spots are full</h4>
             ) : (
               <h4>Spots left: {5 - nomMovies.length}/5</h4>
             )}
+            {isNominated && nomMovies.length <= 5 && (
+              <button onClick={() => undoMovie(selectedMovie.imdbID)}>
+                Undo
+              </button>
+            )}
+
             {!isNominated && nomMovies.length < 5 && (
               <button
                 onClick={() => nominateMovie(selectedMovie.imdbID)}

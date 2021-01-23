@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "./../context/GlobalState";
 
-function Movie({ movieImg, imdbID, selected }) {
+function Movie({ movieImg, imdbID, selected, title }) {
   const { selectMovie, nomMovies } = useContext(GlobalContext);
   const [isNominated, setIsNominated] = useState(false);
 
@@ -19,7 +19,7 @@ function Movie({ movieImg, imdbID, selected }) {
       <img
         className="movie-poster"
         src={movieImg}
-        alt="movieImg"
+        alt={title}
         onClick={() => {
           onSelectMovie(imdbID);
         }}

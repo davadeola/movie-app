@@ -12,6 +12,7 @@ function MovieDisplay({ movies }) {
         <Movie
           movieImg={movie.Poster}
           key={movie.imdbID}
+          title={movie.Title}
           imdbID={movie.imdbID}
           selected={
             selectedMovie[0].imdbID === movie.imdbID && selectedMovie.length > 0
